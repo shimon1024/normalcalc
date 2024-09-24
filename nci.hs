@@ -1,5 +1,4 @@
 import System.Environment
-import System.Exit
 import System.IO
 import qualified Data.ByteString as BS
 
