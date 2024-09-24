@@ -6,7 +6,7 @@ ok=0
 
 for t in t/*.nc; do
   tn="${t%.nc}"
-  out="$(runghc nci.hs "$t" < "$tn.in" | od -tx1c; exit ${PIPESTATUS[0]})"
+  out="$(runghc -Wno-x-partial nci.hs "$t" < "$tn.in" | od -tx1c; exit ${PIPESTATUS[0]})"
   if [ $? = 0 ] && diff -u <(od -tx1c "$tn.out") <(echo "$out"); then
     echo "$tn: ok"
   else
