@@ -1,9 +1,9 @@
-FROM debian:latest
+FROM debian:bookworm
 
 RUN useradd -m app
-RUN apt-get update && apt-get -y install gosu \
+RUN apt-get update && apt-get -y install \
 	# for GHCup
-	build-essential curl libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 \
+	build-essential curl libffi-dev libgmp-dev libncurses-dev \
 	# for ghc-wasm-meta
 	jq unzip zstd xz-utils
 

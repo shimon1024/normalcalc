@@ -24,7 +24,7 @@ A purely functional esoteric programming language
 
 ## License
 
-- `nci.hs`, `test.sh`: MIT-0
+- `nci.hs`, `test.sh`, `play/*`: MIT-0
 - `t/*`: CC0-1.0
 
 ## Links
