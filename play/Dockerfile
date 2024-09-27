@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM debian:latest
 
 RUN useradd -m app
 RUN apt-get update && apt-get -y install \
