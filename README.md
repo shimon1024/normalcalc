@@ -29,5 +29,5 @@ A purely functional esoteric programming language
 
 ## Links
 
-- https://github.com/simon-i1-h/normalcalc
+- https://github.com/shimon1024/normalcalc
 - https://esolangs.org/wiki/Normalcalc
