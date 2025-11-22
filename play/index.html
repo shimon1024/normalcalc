@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>normalcalc playground</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="title">normalcalc playground</h1>
+      <div class="playground">
+        <div>
+          <p>
+            <div>code:</div>
+            <textarea id="code" class="code"># cat (for a single character)&NewLine;``|`,/.</textarea>
+          </p>
+          <p>
+            <div>stdin:</div>
+            <textarea id="stdin" class="stdin">N</textarea>
+          </p>
+          <p>
+            <button id="run" class="run">run</button>
+          </p>
+        </div>
+        <div>
+          <p>
+            <div>stdout:<div>
+            <textarea id="stdout" class="stdout" readonly></textarea>
+          </p>
+          <p>
+            <div>stdout (hex):<div>
+            <textarea id="stdhex" class="stdhex" readonly></textarea>
+          </p>
+          <p>
+            <div>stderr:<div>
+            <textarea id="stderr" class="stderr" readonly></textarea>
+          </p>
+          <p>
+            max out length: <input id="max-out-length" class="max-out-length" type="number" value="65535" />
+          </p>
+          <p>
+            <button id="clear-out" class="clear-out">clear out</button>
+          </p>
+          <p>
+            <a href="https://github.com/shimon1024/normalcalc">repository</a>
+          <p>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/script.ts"></script>
+  </body>
+</html>
