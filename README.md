@@ -4,7 +4,7 @@ A purely functional esoteric programming language
 
 ## Run
 
-`runghc nci.hs src.nc`
+`runghc nci.hs src.nc` or the [playground](https://shimon1024.github.io/normalcalc/play/)
 
 ## Features
 
