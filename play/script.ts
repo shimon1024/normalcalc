@@ -38,6 +38,7 @@ const stdoutElem = document.querySelector<HTMLTextAreaElement>('#stdout')!;
 const stdhexElem = document.querySelector<HTMLTextAreaElement>('#stdhex')!;
 const stderrElem = document.querySelector<HTMLTextAreaElement>('#stderr')!;
 const maxOutLengthElem = document.querySelector<HTMLInputElement>('#max-out-length')!;
+const wasmPromise = WebAssembly.compileStreaming(fetch(nciUrl));
 
 document.querySelector<HTMLButtonElement>('#run')!.addEventListener('click', async () => {
   const code = codeElem.value;
@@ -62,7 +63,7 @@ document.querySelector<HTMLButtonElement>('#run')!.addEventListener('click', asy
     new PreopenDirectory('.', [['src.nc', new File(new TextEncoder().encode(code))]] as any),
   ];
   const wasi = new WASI(['nci', 'src.nc'], [], fds, { debug: false });
-  const wasm = await WebAssembly.compileStreaming(fetch(nciUrl));
+  const wasm = await wasmPromise;
   const inst = await WebAssembly.instantiate(wasm, { 'wasi_snapshot_preview1': wasi.wasiImport });
   try {
     wasi.start(inst as any);
