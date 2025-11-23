@@ -59,9 +59,7 @@ document.querySelector<HTMLButtonElement>('#run')!.addEventListener('click', asy
     new ConsoleStdoutUnbuffered(msg => {
       stderrElem.value = (stderrElem.value + msg).substring(stderrElem.value.length + msg.length - maxOutLength);
     }),
-    new PreopenDirectory('.', [
-      ['src.nc', new File(new TextEncoder().encode(code))],
-    ] as any),
+    new PreopenDirectory('.', [['src.nc', new File(new TextEncoder().encode(code))]] as any),
   ];
   const wasi = new WASI(['nci', 'src.nc'], [], fds, { debug: false });
   const wasm = await WebAssembly.compileStreaming(fetch(nciUrl));
